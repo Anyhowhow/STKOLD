@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D415596B-4F6E-4843-8541-14C8E695381E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>STK_demonstration</RootNamespace>
+    <AssemblyName>GamePlay</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AGI.STKX.Interop, Version=9.2.3.0, Culture=neutral, PublicKeyToken=46f7a65aaf1b26a0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\AGI.STKX.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="AxAGI.STKX.Interop, Version=9.2.3.0, Culture=neutral, PublicKeyToken=46f7a65aaf1b26a0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AxAGI.STKX.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="RACoN">
+      <HintPath>bin\RACoN.dll</HintPath>
+    </Reference>
+    <Reference Include="RACoN.RTILayer">
+      <HintPath>bin\RACoN.RTILayer.dll</HintPath>
+    </Reference>
+    <Reference Include="RtiLayerNative">
+      <HintPath>bin\RtiLayerNative.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Som\CPlanComplete.cs" />
+    <Compile Include="Som\MobileNodeParameter.cs" />
+    <Compile Include="Som\SatUserParameter.cs" />
+    <Compile Include="窗体\Django.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="窗体\Django.Designer.cs">
+      <DependentUpon>Django.cs</DependentUpon>
+    </Compile>
+    <Compile Include="窗体\indicate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="窗体\indicate.Designer.cs">
+      <DependentUpon>indicate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="辅助\excelhelp.cs" />
+    <Compile Include="packet\packet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RTI\CSimulationManager.cs" />
+    <Compile Include="CState.cs" />
+    <Compile Include="RTI\FederateSom.cs" />
+    <Compile Include="MFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MFrm.Designer.cs">
+      <DependentUpon>MFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Som\COpSimTimeIC.cs" />
+    <Compile Include="Som\CStartOpnetIC.cs" />
+    <Compile Include="Som\CStkScenarioIC.cs" />
+    <Compile Include="Som\OpAccessAbilityIC.cs" />
+    <Compile Include="Som\OpAppTrafficInfoAll.cs" />
+    <Compile Include="Som\OpAppTrafficInfoSingleIC.cs" />
+    <Compile Include="Som\OpFinishIC.cs" />
+    <Compile Include="Som\OpLinkAbilityDesignedIC.cs" />
+    <Compile Include="Som\OpS2gLinkTrafficAbilityIC.cs" />
+    <Compile Include="Som\OpUserNum.cs" />
+    <Compile Include="Som\OpUserOnline.cs" />
+    <Compile Include="Som\XGYHCoordinate.cs" />
+    <Compile Include="窗体\PlayData.cs" />
+    <Compile Include="辅助\ReplayData.cs" />
+    <Compile Include="窗体\wincmd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="窗体\wincmd.Designer.cs">
+      <DependentUpon>wincmd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="窗体\TrafficView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="窗体\TrafficView.Designer.cs">
+      <DependentUpon>TrafficView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="窗体\ChartView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="窗体\ChartView.Designer.cs">
+      <DependentUpon>ChartView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="窗体\WaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="窗体\WaitForm.Designer.cs">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="STK\STKScenObjs.cs" />
+    <Compile Include="RTI\stk_demo.cs" />
+    <EmbeddedResource Include="MFrm.resx">
+      <DependentUpon>MFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="窗体\ChartView.resx">
+      <DependentUpon>ChartView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="窗体\Django.resx">
+      <DependentUpon>Django.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="窗体\indicate.resx">
+      <DependentUpon>indicate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="窗体\TrafficView.resx">
+      <DependentUpon>TrafficView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="窗体\wincmd.resx">
+      <DependentUpon>wincmd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="窗体\WaitForm.resx">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AGI.STKObjects">
+      <Guid>{36A4EDB3-B021-4D44-A0AA-D1C897DC333D}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AGI.STKUtil">
+      <Guid>{143176A1-6A8F-41AB-B9B4-C581BD51B350}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AGI.STKVgt">
+      <Guid>{F5F54076-5828-4191-8056-FC087E415ED3}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AGI.STKX">
+      <Guid>{138ABB54-1413-4E7C-BBC5-ED59403DEF47}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
